@@ -13,8 +13,10 @@ export const config: Config = {
     outputTargets: [
         angularOutputTarget({
             componentCorePackage: '@astrouxds/astro-web-components',
-            directivesProxyFile: '../angular/src/directives/proxies.ts',
-            directivesArrayFile: '../angular/src/directives/proxies-list.ts',
+            directivesProxyFile:
+                '../angular-workspace/projects/astro/src/lib/stencil-generated/components.ts',
+            directivesArrayFile:
+                '../angular-workspace/projects/astro/src/lib/stencil-generated/index.ts',
             valueAccessorConfigs: angularValueAccessorBindings,
         }),
         /**
