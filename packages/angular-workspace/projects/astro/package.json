@@ -1,5 +1,5 @@
 {
-  "name": "@astrouxds/new-angular",
+  "name": "astro",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^13.2.0",
