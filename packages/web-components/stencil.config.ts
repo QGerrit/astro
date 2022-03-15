@@ -23,10 +23,6 @@ export const config: Config = {
          * Until this issue is resolved, we need to manually apply this hotfix.
          * Once this is resolved, we can safely remove this.
          */
-        angularOutputTargetFix({
-            directivesUtilsFile:
-                '../../angular/src/directives/angular-component-lib/utils.ts',
-        }),
         reactOutputTarget({
             componentCorePackage: '@astrouxds/astro-web-components',
             proxiesFile: '../react/src/components.tsx',
