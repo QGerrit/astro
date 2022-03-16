@@ -13,19 +13,11 @@ export const config: Config = {
     outputTargets: [
         angularOutputTarget({
             componentCorePackage: '@astrouxds/astro-web-components',
-            directivesProxyFile: '../angular/src/directives/proxies.ts',
-            directivesArrayFile: '../angular/src/directives/proxies-list.ts',
-            valueAccessorConfigs: angularValueAccessorBindings,
-        }),
-        /**
-         * Angular output target currently has a bug where events fire twice.
-         * https://github.com/ionic-team/stencil-ds-output-targets/issues/81
-         * Until this issue is resolved, we need to manually apply this hotfix.
-         * Once this is resolved, we can safely remove this.
-         */
-        angularOutputTargetFix({
-            directivesUtilsFile:
-                '../../angular/src/directives/angular-component-lib/utils.ts',
+            directivesProxyFile:
+                '../angular-workspace/projects/component-library/src/lib/stencil-generated/components.ts',
+            directivesArrayFile:
+                '../angular-workspace/projects/component-library/src/lib/stencil-generated/index.ts',
+            // valueAccessorConfigs: angularValueAccessorBindings,
         }),
         reactOutputTarget({
             componentCorePackage: '@astrouxds/astro-web-components',
