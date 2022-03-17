@@ -17,7 +17,7 @@ export const config: Config = {
                 '../angular-workspace/projects/component-library/src/lib/stencil-generated/components.ts',
             directivesArrayFile:
                 '../angular-workspace/projects/component-library/src/lib/stencil-generated/index.ts',
-            // valueAccessorConfigs: angularValueAccessorBindings,
+            valueAccessorConfigs: angularValueAccessorBindings,
         }),
         reactOutputTarget({
             componentCorePackage: '@astrouxds/astro-web-components',

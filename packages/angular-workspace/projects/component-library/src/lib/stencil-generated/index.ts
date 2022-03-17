@@ -1,6 +1,6 @@
-//@ts-nocheck
-import * as d from './components';
 
+import * as d from './components';
+//@ts-ignore
 export const DIRECTIVES = [
   d.RuxButton,
   d.RuxButtonGroup,
