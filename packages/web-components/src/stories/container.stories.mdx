@@ -1,0 +1,215 @@
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import { html, render } from 'lit-html'
+
+<Meta
+    title="Components/Container"
+    component="rux-container"
+    argTypes={extractArgTypes('rux-container')}
+/>
+
+# Container
+
+export const Default = (args) => {
+    return html`
+    <rux-container>
+        Container Content
+    </rux-container>
+    `
+}
+
+<Canvas>
+    <Story
+        name="Default"
+    >
+        {Default.bind()}
+    </Story>
+</Canvas>
+
+## API
+
+<ArgsTable of="rux-container" />
+
+## Variants
+
+### With Tab Bar
+
+export const WithTabBar = (args) => {
+    return html`
+    <rux-container>
+        <div slot="header">Container</div>
+        <div slot="tab-bar">
+            <rux-tabs id="tab-set-id-1" small>
+                <rux-tab id="tab-id-1">Tab 1</rux-tab>
+                <rux-tab id="tab-id-2">Tab 2</rux-tab>
+                <rux-tab id="tab-id-3" disabled
+                    >Tab 3 (disabled)
+                </rux-tab>
+            </rux-tabs>
+        </div>
+        <rux-tab-panels aria-labelledby="tab-set-id-1">
+            <rux-tab-panel aria-labelledby="tab-id-1">
+                Tab 1 HTML content 
+            </rux-tab-panel>
+            <rux-tab-panel aria-labelledby="tab-id-2">
+                Tab 2 HTML content
+            </rux-tab-panel>
+            <rux-tab-panel aria-labelledby="tab-id-3">
+                Tab 3 HTML content
+            </rux-tab-panel>
+        </rux-tab-panels>
+    </rux-container>
+    `
+}
+
+<Canvas>
+    <Story
+        name="With Tab Bar"
+    >
+        {WithTabBar.bind()}
+    </Story>
+</Canvas>
+
+
+### With Toolbar
+
+export const WithToolbar = (args) => {
+    return html`
+    <rux-container>
+	<div slot="header">Container</div>
+	<div slot="toolbar">
+		<rux-slider></rux-slider>
+	</div>
+	<div>
+		Container Content
+	</div>
+    </rux-container>
+    `
+}
+
+<Canvas>
+    <Story
+        name="With Toolbar"
+    >
+        {WithToolbar.bind()}
+    </Story>
+</Canvas>
+
+### With Footer
+
+export const WithFooter = (args) => {
+    return html`
+    <rux-container>
+	<div slot="header">Container</div>
+	<div>
+		Container Content
+	</div>
+	<div slot="footer">
+		<rux-button>Primary Button</rux-button>
+	</div>
+    </rux-container>
+    `
+}
+
+<Canvas>
+    <Story
+        name="With Footer"
+    >
+        {WithFooter.bind()}
+    </Story>
+</Canvas>
+
+
+### Full Example
+
+export const FullExample = (args) => {
+    return html`
+	<rux-container>
+            <div slot="header">Parent container title</div>
+            <div slot="tab-bar">
+                <rux-tabs id="tab-set-id-2" small>
+                    <rux-tab id="tab-id-4">Tab 1</rux-tab>
+                    <rux-tab id="tab-id-5">Tab 2</rux-tab>
+                    <rux-tab id="tab-id-6" disabled=""
+                        >Tab 3 (disabled)
+                    </rux-tab>
+                </rux-tabs>
+            </div>
+            <div slot="toolbar">
+                <rux-slider></rux-slider>
+            </div>
+            <div>
+                <rux-tab-panels aria-labelledby="tab-set-id-2">
+                    <rux-tab-panel aria-labelledby="tab-id-4">
+                        <rux-table>
+                            <rux-table-header>
+                                <rux-table-header-row>
+                                    <rux-table-header-cell>
+                                        Header text
+                                    </rux-table-header-cell>
+                                    <rux-table-header-cell>
+                                        Header text
+                                    </rux-table-header-cell>
+                                    <rux-table-header-cell>
+                                        Header text
+                                    </rux-table-header-cell>
+                                    <rux-table-header-cell>
+                                        Header text
+                                    </rux-table-header-cell>
+                                </rux-table-header-row>
+                            </rux-table-header>
+                            <rux-table-body>
+                                <rux-table-row>
+                                    <rux-table-cell>Table text</rux-table-cell>
+                                    <rux-table-cell>Table text</rux-table-cell>
+                                    <rux-table-cell>Table text</rux-table-cell>
+                                    <rux-table-cell>Table text</rux-table-cell>
+                                </rux-table-row>
+                                <rux-table-row>
+                                    <rux-table-cell>Table text</rux-table-cell>
+                                    <rux-table-cell>Table text</rux-table-cell>
+                                    <rux-table-cell>Table text</rux-table-cell>
+                                    <rux-table-cell>Table text</rux-table-cell>
+                                </rux-table-row>
+                                <rux-table-row>
+                                    <rux-table-cell>Table text</rux-table-cell>
+                                    <rux-table-cell>Table text</rux-table-cell>
+                                    <rux-table-cell>Table text</rux-table-cell>
+                                    <rux-table-cell>Table text</rux-table-cell>
+                                </rux-table-row>
+                                <rux-table-row>
+                                    <rux-table-cell>Table text</rux-table-cell>
+                                    <rux-table-cell>Table text</rux-table-cell>
+                                    <rux-table-cell>Table text</rux-table-cell>
+                                    <rux-table-cell>Table text</rux-table-cell>
+                                </rux-table-row>
+                            </rux-table-body>
+                        </rux-table>
+                    </rux-tab-panel>
+                    <rux-tab-panel aria-labelledby="tab-id-5">Tab 2 HTML content</rux-tab-panel>
+                    <rux-tab-panel aria-labelledby="tab-id-6">Tab 3 HTML content</rux-tab-panel>
+                </rux-tab-panels>
+            </div>
+	    <div slot="footer">
+		<rux-button style="width: 100%;">Primary Button</rux-button>
+	    </div>
+        </rux-container>
+    `
+}
+
+<Canvas>
+    <Story
+        name="Full Example"
+    >
+        {FullExample.bind()}
+    </Story>
+</Canvas>
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxTab } from '@astrouxds/astro-web-components/dist/components/rux-container'
+customElements.define('rux-container', RuxContainer)
+```
