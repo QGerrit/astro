@@ -21793,6 +21793,23 @@ export class RuxSlider {
 }
 
 
+export declare interface RuxSpinner extends Components.RuxSpinner {}
+
+
+@Component({
+  selector: 'rux-spinner',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>'
+})
+export class RuxSpinner {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface RuxStatus extends Components.RuxStatus {}
 
 @ProxyCmp({

@@ -1,4 +1,5 @@
-import * as d from "./proxies";
+
+import * as d from './proxies';
 
 export const DIRECTIVES = [
   d.RuxButton,
@@ -1084,6 +1085,7 @@ export const DIRECTIVES = [
   d.RuxSegmentedButton,
   d.RuxSelect,
   d.RuxSlider,
+  d.RuxSpinner,
   d.RuxStatus,
   d.RuxSwitch,
   d.RuxTab,
@@ -1103,5 +1105,5 @@ export const DIRECTIVES = [
   d.RuxTimeline,
   d.RuxTrack,
   d.RuxTree,
-  d.RuxTreeNode,
+  d.RuxTreeNode
 ];

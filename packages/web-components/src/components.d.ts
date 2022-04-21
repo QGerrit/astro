@@ -11950,7 +11950,7 @@ export namespace Components {
          */
         "timezone": string;
     }
-    interface RuxLog {
+    interface RuxMenuItem {
         /**
           * Disables the item
          */
@@ -11980,21 +11980,9 @@ export namespace Components {
     }
     interface RuxModal {
         /**
-          * Text for confirmation button
+          * Allows modal to close by clicking off of it
          */
-        "confirmText": string;
-        /**
-          * Text for close button
-         */
-        "denyText": string;
-        /**
-          * Modal body message
-         */
-        "modalMessage"?: string;
-        /**
-          * Modal header title
-         */
-        "modalTitle"?: string;
+        "clickToClose": boolean;
         /**
           * Shows and hides modal
          */
@@ -12342,6 +12330,8 @@ export namespace Components {
           * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
          */
         "value": number;
+    }
+    interface RuxSpinner {
     }
     interface RuxStatus {
         /**
@@ -19042,6 +19032,12 @@ declare global {
         prototype: HTMLRuxSliderElement;
         new (): HTMLRuxSliderElement;
     };
+    interface HTMLRuxSpinnerElement extends Components.RuxSpinner, HTMLStencilElement {
+    }
+    var HTMLRuxSpinnerElement: {
+        prototype: HTMLRuxSpinnerElement;
+        new (): HTMLRuxSpinnerElement;
+    };
     interface HTMLRuxStatusElement extends Components.RuxStatus, HTMLStencilElement {
     }
     var HTMLRuxStatusElement: {
@@ -20246,6 +20242,7 @@ declare global {
         "rux-segmented-button": HTMLRuxSegmentedButtonElement;
         "rux-select": HTMLRuxSelectElement;
         "rux-slider": HTMLRuxSliderElement;
+        "rux-spinner": HTMLRuxSpinnerElement;
         "rux-status": HTMLRuxStatusElement;
         "rux-switch": HTMLRuxSwitchElement;
         "rux-tab": HTMLRuxTabElement;
@@ -32271,25 +32268,17 @@ declare namespace LocalJSX {
     }
     interface RuxModal {
         /**
-          * Text for confirmation button
+          * Allows modal to close by clicking off of it
          */
-        "confirmText"?: string;
-        /**
-          * Text for close button
-         */
-        "denyText"?: string;
-        /**
-          * Modal body message
-         */
-        "modalMessage"?: string;
-        /**
-          * Modal header title
-         */
-        "modalTitle"?: string;
+        "clickToClose"?: boolean;
         /**
           * Event that is fired when modal closes
          */
         "onRuxmodalclosed"?: (event: CustomEvent<boolean>) => void;
+        /**
+          * Event that is fired when modal opens
+         */
+        "onRuxmodalopened"?: (event: CustomEvent<boolean>) => void;
         /**
           * Shows and hides modal
          */
@@ -32679,6 +32668,8 @@ declare namespace LocalJSX {
           * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
          */
         "value"?: number;
+    }
+    interface RuxSpinner {
     }
     interface RuxStatus {
         /**
@@ -33989,6 +33980,7 @@ declare namespace LocalJSX {
         "rux-segmented-button": RuxSegmentedButton;
         "rux-select": RuxSelect;
         "rux-slider": RuxSlider;
+        "rux-spinner": RuxSpinner;
         "rux-status": RuxStatus;
         "rux-switch": RuxSwitch;
         "rux-tab": RuxTab;
@@ -35098,6 +35090,7 @@ declare module "@stencil/core" {
             "rux-segmented-button": LocalJSX.RuxSegmentedButton & JSXBase.HTMLAttributes<HTMLRuxSegmentedButtonElement>;
             "rux-select": LocalJSX.RuxSelect & JSXBase.HTMLAttributes<HTMLRuxSelectElement>;
             "rux-slider": LocalJSX.RuxSlider & JSXBase.HTMLAttributes<HTMLRuxSliderElement>;
+            "rux-spinner": LocalJSX.RuxSpinner & JSXBase.HTMLAttributes<HTMLRuxSpinnerElement>;
             "rux-status": LocalJSX.RuxStatus & JSXBase.HTMLAttributes<HTMLRuxStatusElement>;
             "rux-switch": LocalJSX.RuxSwitch & JSXBase.HTMLAttributes<HTMLRuxSwitchElement>;
             "rux-tab": LocalJSX.RuxTab & JSXBase.HTMLAttributes<HTMLRuxTabElement>;

@@ -86,15 +86,6 @@ Pass properties as attributes of the Astro Rux Modal custom element:
 | `"message"`   | The message container of modal |
 
 
-## CSS Custom Properties
-
-| Name                       | Description            |
-| -------------------------- | ---------------------- |
-| `--modal-background-color` | Modal background color |
-| `--modal-border-color`     | Modal border color     |
-| `--modal-title-color`      | Modal title color      |
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
