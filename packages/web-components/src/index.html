@@ -25,12 +25,25 @@
     <rux-button id="red">Red</rux-button>
     <rux-button id="green">Green</rux-button>
     <rux-button id="norm">Normal</rux-button>
+    <br />
+    <rux-progress max="100" min="0">
+        <rux-button id="prog">Progress Slot</rux-button>
+    </rux-progress>
 
     <script>
         const spinner = document.getElementById('test')
         const btn = document.getElementById('red');
         const green = document.getElementById('green');
         const normal = document.getElementById('norm');
+        const prog = document.querySelector('rux-progress')
+        const progBtn = document.getElementById('prog');
+
+        progBtn.addEventListener('click', () => {
+            if (prog.value) {
+                prog.value = undefined
+            } else prog.value = '50'
+        })
+
         btn.addEventListener('click', () => {
             spinner.style.background = 'red'
         })
