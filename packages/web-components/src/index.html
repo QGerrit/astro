@@ -19,5 +19,21 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
-    <body></body>
+    <body>
+        <rux-segmented-button disabled></rux-segmented-button>
+        <script>
+            const el = document.querySelector('rux-segmented-button')
+            el.data = [
+                {
+                    label: 'one',
+                },
+                {
+                    label: 'two',
+                },
+                {
+                    label: 'three',
+                },
+            ]
+        </script>
+    </body>
 </html>
